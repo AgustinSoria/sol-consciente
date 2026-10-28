@@ -1,0 +1,251 @@
+
+.wellness-section {
+  background: var(--color-lila);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.wellness-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.wellness-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow,
+.card-category {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-violeta-profundo);
+}
+
+.wellness-title {
+  margin: 1rem 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.wellness-title em {
+  color: var(--color-violeta);
+  font-weight: 500;
+}
+
+.wellness-description {
+  max-width: 570px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.9;
+}
+
+/* Carrusel */
+
+.wellness-carousel {
+  display: grid;
+  grid-auto-columns: calc((100% - 2.5rem) / 3);
+  grid-auto-flow: column;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 1.25rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0.25rem;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-violeta) transparent;
+}
+
+.wellness-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--color-blanco-lavanda);
+  border: 1px solid var(--color-border);
+  border-radius: 150px 150px 12px 12px;
+  scroll-snap-align: start;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.wellness-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgb(48 38 111 / 12%);
+}
+
+.wellness-card-image {
+  position: relative;
+  aspect-ratio: 4 / 4.2;
+  overflow: hidden;
+  background: var(--color-celeste);
+}
+
+.wellness-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.wellness-card:hover .wellness-card-image img {
+  transform: scale(1.04);
+}
+
+.card-number {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-blanco-lavanda);
+  color: var(--color-violeta-profundo);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.wellness-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+.card-category {
+  color: var(--color-violeta);
+  font-size: 0.65rem;
+}
+
+.wellness-card-content h3 {
+  margin: 0.65rem 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.wellness-card-content p {
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-violeta);
+  color: var(--color-violeta-profundo);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.card-link:hover {
+  color: var(--color-violeta);
+}
+
+.card-link span {
+  font-size: 1rem;
+}
+
+.wellness-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-violeta-profundo);
+  font-size: 0.78rem;
+}
+
+.wellness-footer p {
+  margin: 0;
+}
+
+.wellness-scroll-icon {
+  color: var(--color-violeta);
+  font-size: 1.2rem;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+  .wellness-carousel {
+    grid-auto-columns: calc((100% - 1.25rem) / 2);
+    gap: 1.25rem;
+  }
+
+  .wellness-card-content {
+    padding: 1.25rem;
+  }
+}
+
+/* Móviles */
+
+@media (max-width: 600px) {
+  .wellness-container {
+    gap: 2rem;
+  }
+
+  .wellness-intro {
+    text-align: left;
+  }
+
+  .wellness-description {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .wellness-carousel {
+    grid-auto-columns: 84%;
+    gap: 1rem;
+    margin-right: -1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .wellness-card {
+    border-radius: 110px 110px 12px 12px;
+  }
+
+  .wellness-card-image {
+    aspect-ratio: 4 / 3.8;
+  }
+
+  .wellness-card-content {
+    padding: 1.25rem;
+  }
+
+  .wellness-card-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .wellness-footer {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wellness-card,
+  .wellness-card-image img,
+  .card-link {
+    transition: none;
+  }
+}

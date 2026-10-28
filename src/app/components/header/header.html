@@ -1,0 +1,49 @@
+
+<header class="site-header">
+  <div class="header-container">
+
+    <a
+      class="brand"
+      href="#inicio"
+      aria-label="Sol Consciente - Inicio"
+      (click)="closeMenu()"
+    >
+      <span class="brand-name">sol consciente.</span>
+      <span class="brand-tagline">BIENESTAR · MOVIMIENTO · CONEXIÓN</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="primary-navigation"
+      [attr.aria-label]="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      id="primary-navigation"
+      class="primary-navigation"
+      [class.is-open]="menuOpen"
+      aria-label="Navegación principal"
+    >
+      <a href="#inicio" (click)="closeMenu()">Inicio</a>
+      <a href="#sobre-sol" (click)="closeMenu()">Sobre Sol</a>
+      <a href="#wellness" (click)="closeMenu()">Wellness</a>
+      <a href="#real-estate" (click)="closeMenu()">Real Estate</a>
+      <a href="#womb-ritual" (click)="closeMenu()">Ritual del útero</a>
+
+      <a
+        class="contact-link"
+        href="#contacto"
+        (click)="closeMenu()"
+      >
+        Contactar
+      </a>
+    </nav>
+
+  </div>
+</header>

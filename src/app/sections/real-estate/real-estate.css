@@ -1,0 +1,180 @@
+
+.real-estate-section {
+  background-color: var(--color-sage, #A9AD91);
+  color: var(--color-text, #292822);
+  overflow: hidden;
+}
+
+.real-estate-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.real-estate-image {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-sand, #E5D7C5);
+}
+
+.real-estate-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  background: linear-gradient(
+    to top,
+    rgb(41 40 34 / 60%),
+    transparent
+  );
+  color: #FFFCF7;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.real-estate-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+}
+
+.real-estate-content .eyebrow {
+  color: #51483F;
+}
+
+.real-estate-content h2 {
+  margin: 1.25rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 4.4vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.03;
+}
+
+.real-estate-content h2 em {
+  font-weight: 400;
+  color: #FFFCF7;
+}
+
+.real-estate-divider {
+  width: 4rem;
+  height: 1px;
+  margin: 0.5rem 0 1.5rem;
+  background-color: #51483F;
+}
+
+.real-estate-lead {
+  margin: 0 0 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  line-height: 1.35;
+}
+
+.real-estate-description {
+  margin: 0 0 2rem;
+  color: #403F34;
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+
+.real-estate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #51483F;
+  background-color: #51483F;
+  color: #FFFCF7;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.real-estate-button:hover {
+  border-color: #FFFCF7;
+  background-color: #FFFCF7;
+  color: #51483F;
+}
+
+.real-estate-button span {
+  font-size: 1rem;
+}
+
+.real-estate-note {
+  margin-top: 1.5rem;
+  color: #51483F;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+/* Tablets y pantallas medianas */
+
+@media (max-width: 900px) {
+  .real-estate-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .real-estate-content h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .real-estate-lead {
+    font-size: 1.35rem;
+  }
+}
+
+/* Móviles */
+
+@media (max-width: 600px) {
+  .real-estate-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .real-estate-image {
+    aspect-ratio: 4 / 3.5;
+  }
+
+  .real-estate-content {
+    padding: 0;
+  }
+
+  .real-estate-content h2 {
+    max-width: 520px;
+    font-size: clamp(2.8rem, 11vw, 3.7rem);
+  }
+
+  .real-estate-description {
+    font-size: 0.92rem;
+  }
+
+  .real-estate-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .real-estate-button {
+    transition: none;
+  }
+}
