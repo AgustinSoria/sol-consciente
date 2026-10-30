@@ -21,9 +21,20 @@
   /* Elementos de interfaz */
   --color-primary: var(--color-violeta);
   --color-primary-dark: var(--color-violeta-profundo);
-
+  --color-background: var(--color-celeste);
+  --color-dark: var(--color-text);
+  --color-button: var(--color-violeta);
+  --color-button-hover: var(--color-violeta-profundo);
+  --color-button-text: var(--color-blanco-lavanda);
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Manrope', sans-serif;
+
+    /* Espaciado horizontal general */
+  /* --container-width: 1280px; */
+  --container-padding: clamp(1.25rem, 5vw, 4rem);
+
+  /* Espaciado vertical */
+  --section-space: clamp(4rem, 7vw, 7rem);
 }
 
 * {
@@ -109,7 +120,11 @@ section[id] {
 }
 
 .container {
-  width: min(100% - 2 * var(--container-padding), var(--container-width));
+  width: min(
+    calc(100% - (2 * var(--container-padding))),
+    var(--container-width)
+  );
+  padding:20px;
   margin-inline: auto;
 }
 

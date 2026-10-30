@@ -8,7 +8,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: var(--color-background);
+  background: #FFFCFF;
   border-bottom: 1px solid rgb(81 72 63 / 12%);
 }
 
@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  padding: 20px;
 }
 
 .brand {
@@ -62,9 +63,9 @@
 
 .primary-navigation a {
   position: relative;
-  color: var(--color-dark);
+  color: var(--color-text);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
   transition: color var(--transition-base);
 }
@@ -75,7 +76,7 @@
   bottom: -0.35rem;
   left: 0;
   height: 1px;
-  background: var(--color-terracotta);
+  background: var(--color-violeta);
   content: '';
   transform: scaleX(0);
   transform-origin: left;
@@ -87,30 +88,42 @@
   transform: scaleX(1);
 }
 
-.primary-navigation a:hover {
-  color: var(--color-terracotta);
+.primary-navigation a:not(.contact-link):hover {
+  color: var(--color-violeta);
 }
 
+/* Botón Contactar */
 .primary-navigation .contact-link {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
   justify-content: center;
   padding: 0.65rem 1.25rem;
-  border: 1px solid var(--color-dark);
+
+  border: 1px solid var(--color-violeta);
   border-radius: var(--radius-button);
 
-  background: var(--color-dark);
-  color: var(--color-surface);
+  background-color: var(--color-violeta);
+  color: var(--color-blanco-lavanda);
+
+  font-weight: 700;
   transition:
     background-color var(--transition-base),
-    border-color var(--transition-base);
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
 }
 
 .primary-navigation .contact-link:hover {
-  border-color: var(--color-terracotta);
-  background: var(--color-terracotta);
-  color: #fff;
+  border-color: var(--color-violeta-profundo);
+  background-color: var(--color-violeta-profundo);
+  color: var(--color-blanco-lavanda);
+  transform: translateY(-1px);
+}
+
+.primary-navigation .contact-link:focus-visible {
+  outline: 3px solid var(--color-violeta);
+  outline-offset: 4px;
 }
 
 .menu-toggle {
